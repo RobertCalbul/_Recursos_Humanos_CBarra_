@@ -48,8 +48,8 @@
                 <RowDefinition Height="45*"/>
                 <RowDefinition Height="287*"/>
             </Grid.RowDefinitions>
-            <Label Content="Misión" Margin="0" Name="label1" Padding="10" Background="White" Grid.RowSpan="2" FontSize="22" Foreground="#FF0F6686" HorizontalContentAlignment="Center" />
-            <TextBox x:Name="lMision" Text="Label" Margin="10" Padding="10" HorizontalContentAlignment="Stretch" Background="White" Grid.Row="1" FontSize="20" Foreground="#FF33B5E6" TextWrapping="Wrap" Style="{DynamicResource textBox}" VerticalContentAlignment="Center" />
+            <Label Content="Misión" Margin="0" Name="label1" Padding="10" Background="White" Grid.RowSpan="2" FontSize="15" Foreground="#FF0F6686" HorizontalContentAlignment="Center" />
+            <TextBox x:Name="lMision" Text="Label" Margin="10" Padding="10" HorizontalContentAlignment="Stretch" Background="White" Grid.Row="1" FontSize="18" Foreground="#FF33B5E6" TextWrapping="Wrap" Style="{DynamicResource textBox}" VerticalContentAlignment="Center" />
             <Border BorderThickness="1" BorderBrush="#FF33B5E6" Grid.RowSpan="2" ></Border>
         </Grid>
         <Grid Name="gReloj" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
