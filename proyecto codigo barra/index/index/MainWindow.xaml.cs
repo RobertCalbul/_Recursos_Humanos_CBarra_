@@ -21,9 +21,6 @@ using WpfApplication1.Clases;
 namespace WpfApplication1
 
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         List<List<string>> Menu = new MenuDefault().allMenu();
