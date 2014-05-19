@@ -57,6 +57,13 @@
             <Border BorderBrush="#FF33B5E6" BorderThickness="1,1,0,1" Name="border4" Margin="0"/>
         </Grid>
         <Grid Margin="1,0,0,0" Name="gCumple" Grid.Column="1" Grid.Row="5" Background="White" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26*" />
+                <RowDefinition Height="84*" />
+                <RowDefinition Height="17*" />
+                <RowDefinition Height="69*" />
+                <RowDefinition Height="29*" />
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="61*"/>
@@ -64,10 +71,18 @@
                 <ColumnDefinition Width="92*"/>
                 <ColumnDefinition Width="204*" />
             </Grid.ColumnDefinitions>
+<<<<<<< HEAD
             <Label Content="Falta" Name="label7" FontSize="20" Background="White" VerticalAlignment="Center" Margin="0" Grid.Column="1" Foreground="#FF33B5E6" />
             <Label FontSize="20" Margin="0" Name="label8" VerticalAlignment="Center" Background="White" Grid.Column="2" Content="10" Padding="3" Foreground="#FF33B5E6" />
             <Label Content="dias para tu cumpleaños." Margin="0" Name="label9" VerticalAlignment="Center" FontSize="20" Background="White" Grid.Column="3" Grid.ColumnSpan="2" Foreground="#FF33B5E6" />
             <Border BorderThickness="1,1,0,1" Grid.ColumnSpan="5" BorderBrush="#FF33B5E6"/>
+=======
+            <Image Grid.Row="3" Grid.Column="3" Visibility="Hidden" Source="/index;component/images/5231115y.png" Name="imagen_cumple"></Image>
+            <Label Content="Falta" Name="label7" FontSize="20" Background="White" VerticalAlignment="Center" Margin="0,68,0,65" Grid.Column="1" Foreground="#FF33B5E6" Visibility="Hidden" Grid.Row="1" Grid.RowSpan="3" />
+            <Label FontSize="24" Name="cumple_label" Background="White" Padding="3" Foreground="#FF33B5E6" Grid.ColumnSpan="4" Grid.Column="1" HorizontalContentAlignment="Center" Grid.RowSpan="1" Grid.Row="1" />
+            <Label Content="               dias para tu cumpleaños." Margin="0,68,0,65" Name="label9" VerticalAlignment="Center" FontSize="20" Background="White" Foreground="#FF33B5E6" Visibility="Hidden" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" />
+            <Border BorderThickness="0,1,1,1" Grid.ColumnSpan="5" BorderBrush="#FF33B5E6" Grid.RowSpan="5"></Border>
+>>>>>>> 190f65847a06c15e3e0a1169eaf065e5dc5272b7
         </Grid>
         <Grid Margin="0" Name="gMenu" Grid.Row="4" Grid.RowSpan="4">
             <Grid.RowDefinitions>
