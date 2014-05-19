@@ -47,7 +47,7 @@ namespace WpfApplication1
             dispatcherTimer.Start();
 
             //-----------------------------------------------------
-            int diaCumple = 25;//Dia del Cumpleanios
+            int diaCumple = 19;//Dia del Cumpleanios
             int mesCumple = 05;//Mes de Cumple 4=Abril
             int anioCumple = 1993; //Anio de Cumple
 
@@ -59,7 +59,7 @@ namespace WpfApplication1
 
             DateTime proximoCumple;
             TimeSpan faltan;
-            int year = 364;
+            int year = 365;
             int x1;
             //Define el proximo Cumple, En caso de que el mes sea menor al Mes Actual se busca el Próxima fecha que seria del año que viene
             //es por ello el AddYear(1)
@@ -70,7 +70,7 @@ namespace WpfApplication1
                 proximoCumple = new DateTime(DateTime.Now.AddYears(1).Year, mesCumple, diaCumple);
                 faltan = proximoCumple.Subtract(DateTime.Now);
                 x1 = faltan.Days;
-                x1 = (x1-year);
+                x1 = (1+(x1-year));
 
             }
             else

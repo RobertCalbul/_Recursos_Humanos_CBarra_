@@ -48,8 +48,8 @@
                 <RowDefinition Height="61*"/>
                 <RowDefinition Height="135*"/>
             </Grid.RowDefinitions>
-            <Label Content="Misión" Margin="0" Name="label1" Padding="10" Background="{x:Null}" Grid.RowSpan="2" FontSize="24" Foreground="#FF2D2D2D"  HorizontalContentAlignment="Center" FontFamily="Futura LT Light" />
-            <TextBox x:Name="lMision" Text="Label" Margin="10" Padding="10" HorizontalContentAlignment="Stretch" Background="{x:Null}" Grid.Row="1" FontSize="18" Foreground="#FF2D2D2D" TextWrapping="Wrap" Style="{DynamicResource textBox}" VerticalContentAlignment="Center" />
+            <Label Content="Misión" Margin="0" Name="label1" Padding="10" Background="{x:Null}" Grid.RowSpan="2" FontSize="24" Foreground="#FF33B5E6"  HorizontalContentAlignment="Center" FontFamily="Futura LT Light" />
+            <TextBox x:Name="lMision" Text="Label" Margin="10" Padding="10" HorizontalContentAlignment="Stretch" Background="{x:Null}" Grid.Row="1" FontSize="18" Foreground="#FF4F2EB4" TextWrapping="Wrap" Style="{DynamicResource textBox}" VerticalContentAlignment="Center" />
             <Border BorderThickness="1,1,0,0" BorderBrush="#FF33B5E6" Grid.RowSpan="2" ></Border>
         </Grid>
         <Grid Name="gReloj" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
@@ -85,17 +85,17 @@
                 <RowDefinition Height="31*" />
                 <RowDefinition Height="117*"/>
             </Grid.RowDefinitions>
-            <Label Content="Menú " FontSize="24" Name="label5" Margin="0" Grid.Row="1" Padding="10" Background="White" Foreground="#FF2D2D2D" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label Content="Menú " FontSize="24" Name="label5" Margin="0" Grid.Row="1" Padding="10" Background="White" Foreground="#FF33B5E6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
             <Label FontSize="26" Margin="0" Name="menu_" Grid.Row="2" Padding="10" Background="White" Foreground="#FF2D2D2D" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
             <Border BorderThickness="1,1,0,1" BorderBrush="#FF33B5E6" Grid.RowSpan="3"></Border>
         </Grid>
-        <Grid Margin="0" Name="gAccidente" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" Background="#FF9B325D">
+        <Grid Margin="0" Name="gAccidente" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" Background="#FF33B5E6">
             <Grid.RowDefinitions>
                 <RowDefinition Height="52*"/>
                 <RowDefinition Height="141*"/>
             </Grid.RowDefinitions>
             <Label Margin="0" Name="carga_dias" FontSize="56" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="40" Background="White" Foreground="#FFFB0000" />
-            <Label Content="Dias Sin Accidentes " Name="label2" FontSize="28" Background="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF2D2D2D" BorderThickness="0" />
+            <Label Content="Dias Sin Accidentes " Name="label2" FontSize="28" Background="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF33B5E6" BorderThickness="0" />
             <Border BorderBrush="#FF33B5E6" BorderThickness="1,0" Grid.RowSpan="2"></Border>
         </Grid>
         <Grid Name="gTiempo" Grid.Column="2" Grid.Row="1" Grid.RowSpan="5">
