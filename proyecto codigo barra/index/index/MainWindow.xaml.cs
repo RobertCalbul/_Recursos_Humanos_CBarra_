@@ -40,71 +40,13 @@ namespace WpfApplication1
             menu_.Content = "";
             foreach (string list in Menu[new Random().Next(Menu.Count)]) menu_.Content += "*"+list+"\n";//CARGA MENU ALEATORIO
             cargar_tiempo();//CARGA EL TIEMPO
+            
             //Timer que actualiza el relog
             DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
 
-            //-----------------------------------------------------
-            int diaCumple = 19;//Dia del Cumpleanios
-            int mesCumple = 05;//Mes de Cumple 4=Abril
-            int anioCumple = 1993; //Anio de Cumple
-
-            //campo que se trae de la base de datos segmentado 
-            //------------------------------------------------------
-
-
-            DateTime fechaNacimiento = new DateTime(anioCumple, mesCumple, diaCumple);
-
-            DateTime proximoCumple;
-            TimeSpan faltan;
-            int year = 365;
-            int x1;
-            //Define el proximo Cumple, En caso de que el mes sea menor al Mes Actual se busca el Próxima fecha que seria del año que viene
-            //es por ello el AddYear(1)
-            //En caso de ser mayor se toma el año actual
-            if (DateTime.Now.Month <= mesCumple && DateTime.Now.Day <= diaCumple)
-            {
-
-                proximoCumple = new DateTime(DateTime.Now.AddYears(1).Year, mesCumple, diaCumple);
-                faltan = proximoCumple.Subtract(DateTime.Now);
-                x1 = faltan.Days;
-                x1 = (1+(x1-year));
-
-            }
-            else
-            {
-                proximoCumple = new DateTime(DateTime.Now.Year, mesCumple, diaCumple);
-                faltan = DateTime.Now.Subtract(proximoCumple);
-                x1 = faltan.Days;
-                x1 = (year - x1);
-            }
-            //Definiremos los dias faltantes para el proximo cumple
-
-            // muestro los dias que quedan para el cumpleaños 
-            int cumple = faltan.Days;
-
-
-            cumple_label.Content = x1;
-
-
-            if (x1 == 0)
-            {
-
-
-                cumple_label.Content = "Feliz Cumpleaños Empleado Asalariado";
-                imagen_cumple.Visibility = Visibility.Visible;
-
-            }
-            else
-            {
-
-                cumple_label.Content = "Faltan " + x1 + " Dias Para Tu Cumpleaños ";
-
-
-
-            } 
 
 
         }
@@ -153,7 +95,30 @@ namespace WpfApplication1
         }
 
 
+        private void birthDay(Persona per) 
+        {
+            //Console.WriteLine(Fecha.Substring(0, 4) + " " + int.Parse(Fecha.Substring(5, 2)) + " " + Fecha.Substring(8, 2));
+            int diaCumple = int.Parse(per.fecha_nac.Substring(8, 2));//Dia del Cumpleanios
+            int mesCumple = int.Parse(per.fecha_nac.Substring(5, 2));//Mes de Cumple 4=Abril
+            int anioCumple = int.Parse(per.fecha_nac.Substring(0, 4)); //Anio de Cumple
 
+           // DateTime proximoCumple = new DateTime(DateTime.Now.Year, mesCumple, diaCumple);
+            TimeSpan faltan = new DateTime(DateTime.Now.Year, mesCumple, diaCumple).Subtract(DateTime.Now);
+            int diasRestantes = faltan.Days >= 0 ? faltan.Days : 365 + faltan.Days;
+
+            this.imagen_cumple.Visibility = Visibility.Hidden;
+            if (diasRestantes >= 0)
+            {
+                if (diasRestantes > 0 && faltan.Hours != 0)cumple_label.Content = "Faltan " + diasRestantes + " dias para tu cumpleaños ";
+                else if (faltan.Hours != 0 && faltan.Hours > 0)
+                    cumple_label.Content = "Faltan " + faltan.Hours+":"+faltan.Minutes+ " horas para tu cumpleaños";
+                else { 
+                    cumple_label.Content = "Feliz cumpleaños "+per.nombre.ToUpper();
+                    this.imagen_cumple.Visibility = Visibility.Visible; 
+                }
+            }
+
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -172,6 +137,7 @@ namespace WpfApplication1
                 {
                     this.tRut.Text = dato.rut;
                     this.tName.Text = dato.nombre;
+                    birthDay(dato);
                     Horario h = new Horario();
                 }
                 else MessageBox.Show("No estas registrado como empleado XUXETUMADRE!.");

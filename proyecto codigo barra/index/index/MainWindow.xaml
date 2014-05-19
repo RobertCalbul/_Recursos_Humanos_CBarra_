@@ -39,9 +39,9 @@
             <Image Margin="0,0,0,33" Name="image1" Stretch="Fill" Source="/index;component/images/images.jpg" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1" />
             <Label Content="Rut" Margin="0" Name="label3" Grid.Column="2" VerticalContentAlignment="Center" FontSize="20" Foreground="#FF0F6686" Grid.RowSpan="2" />
             <Label Content="Nombre" Margin="0" Name="label6" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Center" FontSize="20" Foreground="#FF0F6686" />
-            <TextBox Name="tRut" Grid.Column="3" Margin="0,10,0,15" TextWrapping="Wrap" Text="11.111.111-1" VerticalAlignment="Center" Padding="10" BorderThickness="0" Foreground="#FF0F6686" FontSize="16" Grid.Row="1" KeyDown="tRut_keyDown" />
+            <TextBox Name="tRut" Grid.Column="3" Margin="0,10,0,15" TextWrapping="Wrap" Text="23456" VerticalAlignment="Center" Padding="10" BorderThickness="0" Foreground="#FF0F6686" FontSize="16" Grid.Row="1" KeyDown="tRut_keyDown" />
             <TextBox Name="tName" Grid.Column="3" Margin="0,15,0,14" Grid.Row="2" TextWrapping="Wrap" Text="Jacob Henriquez" Padding="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" BorderThickness="0" Foreground="#FF0F6686" FontSize="16" />
-            <Border BorderBrush="#FF33B5E6" BorderThickness="1,0,0,0" Name="border6" Grid.ColumnSpan="5" Margin="0" Grid.RowSpan="5" />
+            <Border BorderBrush="#FF33B5E6" BorderThickness="1,0,0,0" Name="border6" Grid.ColumnSpan="5" Margin="0,-2,0,2" Grid.RowSpan="5" />
         </Grid>
         <Grid Name="gMision" Grid.Row="1" Grid.RowSpan="3">
             <Grid.RowDefinitions>
@@ -76,7 +76,7 @@
             <Label Content="Falta" Name="label7" FontSize="20" Background="White" VerticalAlignment="Center" Margin="0,68,0,65" Grid.Column="1" Foreground="#FF33B5E6" Visibility="Hidden" Grid.Row="1" Grid.RowSpan="3" />
             <Label FontSize="24" Name="cumple_label" Background="White" Padding="3" Foreground="#FF33B5E6" Grid.ColumnSpan="4" Grid.Column="1" HorizontalContentAlignment="Center" Grid.RowSpan="1" Grid.Row="1" />
             <Label Content="               dias para tu cumpleaños." Margin="0,68,0,65" Name="label9" VerticalAlignment="Center" FontSize="20" Background="White" Foreground="#FF33B5E6" Visibility="Hidden" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" />
-            <Border BorderThickness="0,1,1,1" Grid.ColumnSpan="5" BorderBrush="#FF33B5E6" Grid.RowSpan="5"></Border>
+            <Border BorderThickness="1" Grid.ColumnSpan="5" BorderBrush="#FF33B5E6" Grid.RowSpan="5"></Border>
 
         </Grid>
         <Grid Margin="0" Name="gMenu" Grid.Row="4" Grid.RowSpan="4">
