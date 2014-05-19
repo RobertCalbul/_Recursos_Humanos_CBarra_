@@ -46,9 +46,8 @@ namespace WpfApplication1
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
 
-
             //-----------------------------------------------------
-            int diaCumple = 19;//Dia del Cumpleanios
+            int diaCumple = 23;//Dia del Cumpleanios
             int mesCumple = 05;//Mes de Cumple 4=Abril
             int anioCumple = 1984; //Anio de Cumple
 
@@ -59,29 +58,38 @@ namespace WpfApplication1
             DateTime fechaNacimiento = new DateTime(anioCumple, mesCumple, diaCumple);
 
             DateTime proximoCumple;
+            TimeSpan faltan;
+            int year = 365;
+            int x1;
             //Define el proximo Cumple, En caso de que el mes sea menor al Mes Actual se busca el Próxima fecha que seria del año que viene
             //es por ello el AddYear(1)
             //En caso de ser mayor se toma el año actual
             if (DateTime.Now.Month <= mesCumple && DateTime.Now.Day <= diaCumple)
+            {
+
                 proximoCumple = new DateTime(DateTime.Now.AddYears(1).Year, mesCumple, diaCumple);
+                faltan = proximoCumple.Subtract(DateTime.Now);
+                x1 = faltan.Days;
+                x1 = (x1-year);
+
+            }
             else
+            {
                 proximoCumple = new DateTime(DateTime.Now.Year, mesCumple, diaCumple);
-
+                faltan = DateTime.Now.Subtract(proximoCumple);
+                x1 = faltan.Days;
+                x1 = (year - x1);
+            }
             //Definiremos los dias faltantes para el proximo cumple
-            TimeSpan faltan = proximoCumple.Subtract(DateTime.Now);
 
-          // muestro los dias que quedan para el cumpleaños 
-            int cumple=faltan.Days;
-            
-
-            int year = 364 ; 
-            int  real = (cumple-year) ;
-            cumple_label.Content = real;
+            // muestro los dias que quedan para el cumpleaños 
+            int cumple = faltan.Days;
 
 
+            cumple_label.Content = x1;
 
 
-            if (real == 0)
+            if (x1 == 0)
             {
 
 
@@ -89,19 +97,14 @@ namespace WpfApplication1
                 imagen_cumple.Visibility = Visibility.Visible;
 
             }
-            else {
+            else
+            {
 
-                cumple_label.Content = "Faltan " + real + " Dias Para Tu Cumpleaños ";
-            
-            
-            
+                cumple_label.Content = "Faltan " + x1 + " Dias Para Tu Cumpleaños ";
+
+
+
             } 
-
-
-
-
-
-
 
 
         }
