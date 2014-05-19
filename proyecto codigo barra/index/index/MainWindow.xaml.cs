@@ -44,6 +44,65 @@ namespace WpfApplication1
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
+
+
+            //-----------------------------------------------------
+            int diaCumple = 25;//Dia del Cumpleanios
+            int mesCumple = 05;//Mes de Cumple 4=Abril
+            int anioCumple = 1984; //Anio de Cumple
+
+            //campo que se trae de la base de datos segmentado 
+            //------------------------------------------------------
+
+
+            DateTime fechaNacimiento = new DateTime(anioCumple, mesCumple, diaCumple);
+
+            DateTime proximoCumple;
+            //Define el proximo Cumple, En caso de que el mes sea menor al Mes Actual se busca el Próxima fecha que seria del año que viene
+            //es por ello el AddYear(1)
+            //En caso de ser mayor se toma el año actual
+            if (DateTime.Now.Month <= mesCumple && DateTime.Now.Day <= diaCumple)
+                proximoCumple = new DateTime(DateTime.Now.AddYears(1).Year, mesCumple, diaCumple);
+            else
+                proximoCumple = new DateTime(DateTime.Now.Year, mesCumple, diaCumple);
+
+            //Definiremos los dias faltantes para el proximo cumple
+            TimeSpan faltan = proximoCumple.Subtract(DateTime.Now);
+
+          // muestro los dias que quedan para el cumpleaños 
+            int cumple=faltan.Days;
+            
+
+            int year = 364 ; 
+            int  real = (cumple-year) ;
+            cumple_label.Content = real;
+
+
+
+
+            if (real == 0)
+            {
+
+
+                cumple_label.Content = "Feliz Cumpleaños Empleado Asalariado";
+
+
+            }
+            else {
+
+                cumple_label.Content = "Faltan " + real + " Dias Para Tu Cumpleaños ";
+            
+            
+            
+            } 
+
+
+
+
+
+
+
+
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
