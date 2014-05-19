@@ -47,7 +47,7 @@ namespace WpfApplication1
 
 
             //-----------------------------------------------------
-            int diaCumple = 25;//Dia del Cumpleanios
+            int diaCumple = 19;//Dia del Cumpleanios
             int mesCumple = 05;//Mes de Cumple 4=Abril
             int anioCumple = 1984; //Anio de Cumple
 
@@ -85,7 +85,7 @@ namespace WpfApplication1
 
 
                 cumple_label.Content = "Feliz Cumpleaños Empleado Asalariado";
-
+                imagen_cumple.Visibility = Visibility.Visible;
 
             }
             else {
