@@ -43,13 +43,13 @@
             <TextBox Name="tName" Grid.Column="3" Margin="0,15,0,14" Grid.Row="2" TextWrapping="Wrap" Text="Jacob Henriquez" Padding="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" BorderThickness="0" Foreground="#FF0F6686" FontSize="16" />
             <Border BorderBrush="#FF33B5E6" BorderThickness="1,0,0,0" Name="border6" Grid.ColumnSpan="5" Margin="0,-2,0,2" Grid.RowSpan="5" />
         </Grid>
-        <Grid Name="gMision" Grid.Row="1" Grid.RowSpan="3">
+        <Grid Name="gMision" Grid.Row="1" Grid.RowSpan="3" Background="#FF00A501">
             <Grid.RowDefinitions>
                 <RowDefinition Height="61*"/>
                 <RowDefinition Height="135*"/>
             </Grid.RowDefinitions>
-            <Label Content="Misión" Margin="0" Name="label1" Padding="10" Background="{x:Null}" Grid.RowSpan="2" FontSize="24" Foreground="#FF33B5E6"  HorizontalContentAlignment="Center" FontFamily="Futura LT Light" />
-            <TextBox x:Name="lMision" Text="Label" Margin="10" Padding="10" HorizontalContentAlignment="Stretch" Background="{x:Null}" Grid.Row="1" FontSize="18" Foreground="#FF4F2EB4" TextWrapping="Wrap" Style="{DynamicResource textBox}" VerticalContentAlignment="Center" />
+            <Label Content="Misión" Margin="0" Name="label1" Padding="10" Background="{x:Null}" Grid.RowSpan="2" FontSize="24" Foreground="#FFE6E6E6"  HorizontalContentAlignment="Center" FontFamily="Futura LT Light" />
+            <TextBox x:Name="lMision" Text="Label" Margin="10" Padding="10" HorizontalContentAlignment="Stretch" Background="{x:Null}" Grid.Row="1" FontSize="18" Foreground="#FFEEEDF1" TextWrapping="Wrap" Style="{DynamicResource textBox}" VerticalContentAlignment="Center" SelectionBrush="{x:Null}" />
             <Border BorderThickness="1,1,0,0" BorderBrush="#FF33B5E6" Grid.RowSpan="2" ></Border>
         </Grid>
         <Grid Name="gReloj" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
@@ -79,14 +79,14 @@
             <Border BorderThickness="1" Grid.ColumnSpan="5" BorderBrush="#FF33B5E6" Grid.RowSpan="5"></Border>
 
         </Grid>
-        <Grid Margin="0" Name="gMenu" Grid.Row="4" Grid.RowSpan="4">
+        <Grid Margin="0" Name="gMenu" Grid.Row="4" Grid.RowSpan="4" Background="#FFDA542E">
             <Grid.RowDefinitions>
                 <RowDefinition Height="23" />
                 <RowDefinition Height="31*" />
                 <RowDefinition Height="117*"/>
             </Grid.RowDefinitions>
-            <Label Content="Menú " FontSize="24" Name="label5" Margin="0" Grid.Row="1" Padding="10" Background="White" Foreground="#FF33B5E6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-            <Label FontSize="26" Margin="0" Name="menu_" Grid.Row="2" Padding="10" Background="White" Foreground="#FF2D2D2D" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
+            <Label Content="Menú " FontSize="24" Name="label5" Margin="0" Grid.Row="1" Padding="10" Background="{x:Null}" Foreground="#FFF1F1F1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Label FontSize="26" Margin="0" Name="menu_" Grid.Row="2" Padding="10" Background="{x:Null}" Foreground="#FFFDF9F9" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
             <Border BorderThickness="1,1,0,1" BorderBrush="#FF33B5E6" Grid.RowSpan="3"></Border>
         </Grid>
         <Grid Margin="0" Name="gAccidente" Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" Background="#FF33B5E6">
@@ -98,14 +98,14 @@
             <Label Content="Dias Sin Accidentes " Name="label2" FontSize="28" Background="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF33B5E6" BorderThickness="0" />
             <Border BorderBrush="#FF33B5E6" BorderThickness="1,0" Grid.RowSpan="2"></Border>
         </Grid>
-        <Grid Name="gTiempo" Grid.Column="2" Grid.Row="1" Grid.RowSpan="5">
+        <Grid Name="gTiempo" Grid.Column="2" Grid.Row="1" Grid.RowSpan="5" Background="#FF2E8CEE">
             <Grid.RowDefinitions>
                 <RowDefinition Height="254*"/>
                 <RowDefinition Height="99*"/>
                 <RowDefinition Height="105*"/>
             </Grid.RowDefinitions>
             <TextBox Margin="0" Name="frase_" FontSize="18" Grid.Row="2" Text="frase" Background="White" Foreground="#FF2D2D2D" HorizontalContentAlignment="Center" Style="{DynamicResource textBox}" FontFamily="Futura LT Light" TextWrapping="Wrap" Padding="5" />
-            <Grid Background="White" Grid.RowSpan="2">
+            <Grid Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="27*"/>
                     <ColumnDefinition Width="90*"/>
@@ -122,10 +122,10 @@
                     <RowDefinition Height="37*"/>
                     <RowDefinition Height="106*"/>
                 </Grid.RowDefinitions>
-                <Label Name="lCity" Content="Temuco" Padding="0" Background="White" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="0" FontSize="18" VerticalContentAlignment="Bottom" />
-                <Label Name="lDate" Content="Date" Margin="0" Grid.Row="2" Grid.Column="1" Background="White" Grid.ColumnSpan="3" FontSize="18" Padding="0" Grid.IsSharedSizeScope="True"/>
+                <Label Name="lCity" Content="Temuco" Padding="0" Background="{x:Null}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="0" FontSize="18" VerticalContentAlignment="Bottom" />
+                <Label Name="lDate" Content="Date" Margin="0" Grid.Row="2" Grid.Column="1" Background="{x:Null}" Grid.ColumnSpan="3" FontSize="18" Padding="0" Grid.IsSharedSizeScope="True"/>
                 <Image Name="lImageTiempo" Margin="0" Grid.Row="3" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
-                <Label Name="lTemperature" Content="14" Margin="0" Grid.Row="4" Grid.Column="2" Background="White" VerticalContentAlignment="Bottom" FontSize="52" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                <Label Name="lTemperature" Content="14" Margin="0" Grid.Row="4" Grid.Column="2" Background="{x:Null}" VerticalContentAlignment="Bottom" FontSize="52" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
 
             </Grid>
             <Border BorderBrush="#FF33B5E6" BorderThickness="1" Grid.RowSpan="3" Margin="0,-21,0,21"/>
