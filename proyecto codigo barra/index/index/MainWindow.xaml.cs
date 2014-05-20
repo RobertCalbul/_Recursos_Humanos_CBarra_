@@ -47,7 +47,7 @@ namespace WpfApplication1
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
 
-
+            //hola weon 
 
         }
 
