@@ -43,7 +43,7 @@ namespace WpfApplication1.Clases
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Persona.findByRut()");
+                Console.WriteLine("Error Persona.findByRut() "+e.Message.ToString());
                 return per;               
             }
             finally

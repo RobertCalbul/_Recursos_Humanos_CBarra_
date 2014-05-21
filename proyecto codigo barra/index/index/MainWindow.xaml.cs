@@ -61,14 +61,14 @@ namespace WpfApplication1
         {
             try
             {
+                String[] diasEng = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+                String[] diasEs = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
                 XmlDocument pagina = new XmlDocument();
                 pagina.Load("http://weather.yahooapis.com/forecastrss?w=349871&u=c");
 
                 XmlNamespaceManager man = new XmlNamespaceManager(pagina.NameTable);
                 man.AddNamespace("yweather", "http://xml.weather.yahoo.com/ns/rss/1.0");
-                String[] diasEng = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
-                String[] diasEs = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
-
+                
                 XmlNode chanel = pagina.SelectSingleNode("rss").SelectSingleNode("channel");
                 String build = chanel.SelectSingleNode("lastBuildDate").InnerText;
                 String cuidad = chanel.SelectSingleNode("yweather:location", man).Attributes["city"].Value;
@@ -82,15 +82,15 @@ namespace WpfApplication1
                 String cdata = chanel.SelectSingleNode("item", man).SelectSingleNode("description").InnerText;//.InnerText;
 
                 this.lCity.Content = cuidad + ", " + country;//CIUDAD, PAIN
-                Console.WriteLine(build.Substring(0, 3));
-                this.lDate.Content = "";
-                for (int i = 0; i < diasEng.Length; i++) this.lDate.Content = diasEng[i].Equals(build.Substring(0, 3)) ? diasEs[i] + ", " + build.Substring(16, 5) : "";//CARGA EL DIA EN ESPAÑOL
+               // this.lDate.Content = "";
+                for (int i = 0; i < diasEng.Length; i++)
+                    if (diasEng[i] == build.Substring(0, 3)) this.lDate.Content = diasEs[i]+", "+build.Substring(16, 5); //CARGA EL DIA EN ESPAÑOL
                 this.lTemperature.Content = chill + "º" + temperature;//CARCA LA TEMPERATURA ACTUAL
                 string imgTiempo = cdata.Substring(cdata.Substring(11, 40).Replace("\"/>", "").Length + 5, 2).Replace("\"/>", "");//OBTIENE LA IMAGEN DEL TIEMPO
                 this.lImageTiempo.Source = new BitmapImage(new Uri(string.Format("https://s.yimg.com/os/mit/media/m/weather/images/icons/l/{0}n-100567.png", imgTiempo)));//CARGA IMAGEN DEL TIEMPO
             }catch(Exception e){
                 MessageBox.Show("Revise su conexion a internet para mostrar datos metereologico.");
-               // this.lImageTiempo.Source = ;
+                Console.WriteLine("ERROR MainWindow.cargar_tiempo() "+e.Message.ToString());
             }  
         }
 
@@ -109,11 +109,11 @@ namespace WpfApplication1
             this.imagen_cumple.Visibility = Visibility.Hidden;
             if (diasRestantes >= 0)
             {
-                if (diasRestantes > 0 && faltan.Hours != 0)cumple_label.Content = "Faltan " + diasRestantes + " dias para tu cumpleaños ";
+                if (diasRestantes > 0 && faltan.Hours != 0)cumple_label.Text = "Faltan " + diasRestantes + " dias para tu cumpleaños ";
                 else if (faltan.Hours != 0 && faltan.Hours > 0)
-                    cumple_label.Content = "Faltan " + faltan.Hours+":"+faltan.Minutes+ " horas para tu cumpleaños";
-                else { 
-                    cumple_label.Content = "Feliz cumpleaños "+per.nombre.ToUpper();
+                    cumple_label.Text = "Faltan " + faltan.Hours + ":" + faltan.Minutes + " horas para tu cumpleaños";
+                else {
+                    cumple_label.Text = "Feliz cumpleaños " + per.nombre.ToUpper() + " que tengas un buen dia.";
                     this.imagen_cumple.Visibility = Visibility.Visible; 
                 }
             }

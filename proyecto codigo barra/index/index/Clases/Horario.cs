@@ -9,7 +9,6 @@ namespace WpfApplication1.Clases
     class Horario
     {
         MySqlConnection con = null;
-        public String fecha;
         public Horario() { }
 
         public int save() {
@@ -27,7 +26,7 @@ namespace WpfApplication1.Clases
                 return command.ExecuteNonQuery();
             }
             catch (Exception e) { 
-                Console.WriteLine("Error Horario.save()");
+                Console.WriteLine("Error Horario.save() "+e.Message.ToString());
                 return 0;
             }
         }
