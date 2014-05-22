@@ -17,6 +17,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Windows.Threading;
 using WpfApplication1.Clases;
+using System.Threading;
 
 namespace WpfApplication1
 
@@ -25,6 +26,7 @@ namespace WpfApplication1
     {
         List<List<string>> Menu = new MenuDefault().allMenu();
         List<string> frasesDiarias = new FrasesDiarias().allFrases();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,9 +48,6 @@ namespace WpfApplication1
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
-
-            //hola weon 
-
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -68,7 +67,7 @@ namespace WpfApplication1
 
                 XmlNamespaceManager man = new XmlNamespaceManager(pagina.NameTable);
                 man.AddNamespace("yweather", "http://xml.weather.yahoo.com/ns/rss/1.0");
-                
+
                 XmlNode chanel = pagina.SelectSingleNode("rss").SelectSingleNode("channel");
                 String build = chanel.SelectSingleNode("lastBuildDate").InnerText;
                 String cuidad = chanel.SelectSingleNode("yweather:location", man).Attributes["city"].Value;
@@ -82,16 +81,17 @@ namespace WpfApplication1
                 String cdata = chanel.SelectSingleNode("item", man).SelectSingleNode("description").InnerText;//.InnerText;
 
                 this.lCity.Content = cuidad + ", " + country;//CIUDAD, PAIN
-               // this.lDate.Content = "";
                 for (int i = 0; i < diasEng.Length; i++)
-                    if (diasEng[i] == build.Substring(0, 3)) this.lDate.Content = diasEs[i]+", "+build.Substring(16, 5); //CARGA EL DIA EN ESPAÑOL
+                    if (diasEng[i] == build.Substring(0, 3)) this.lDate.Content = diasEs[i] + ", " + build.Substring(16, 5); //CARGA EL DIA EN ESPAÑOL
                 this.lTemperature.Content = chill + "º" + temperature;//CARCA LA TEMPERATURA ACTUAL
                 string imgTiempo = cdata.Substring(cdata.Substring(11, 40).Replace("\"/>", "").Length + 5, 2).Replace("\"/>", "");//OBTIENE LA IMAGEN DEL TIEMPO
                 this.lImageTiempo.Source = new BitmapImage(new Uri(string.Format("https://s.yimg.com/os/mit/media/m/weather/images/icons/l/{0}n-100567.png", imgTiempo)));//CARGA IMAGEN DEL TIEMPO
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
                 MessageBox.Show("Revise su conexion a internet para mostrar datos metereologico.");
-                Console.WriteLine("ERROR MainWindow.cargar_tiempo() "+e.Message.ToString());
-            }  
+                Console.WriteLine("ERROR MainWindow.cargar_tiempo() " + e.Message.ToString());
+            }
         }
 
 
@@ -139,10 +139,13 @@ namespace WpfApplication1
                     this.tName.Text = dato.nombre;
                     birthDay(dato);
                     Horario h = new Horario();
+                    
+                    
                 }
                 else MessageBox.Show("No estas registrado como empleado XUXETUMADRE!.");
-               // if (dato!=null && h.save() > 0) MessageBox.Show("Ingreso Correcto");
             }
+            
         }
+
     }
 }
