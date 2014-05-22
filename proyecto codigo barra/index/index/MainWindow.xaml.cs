@@ -127,7 +127,7 @@ namespace WpfApplication1
         private void image2_ImageFailed(object sender, ExceptionRoutedEventArgs e)
         {
         }
-<<<<<<< HEAD
+        //BORAR DATOS CAMPOS
         public void Clear() {
             Thread.Sleep(1000);
             this.tRut.Text = "";
@@ -137,27 +137,19 @@ namespace WpfApplication1
             this.imagen_cumple.Visibility = Visibility.Hidden;
 
         }
-=======
 
->>>>>>> 0ab46914256cd01fc186470fc6fd7ffc602ac0d2
         private void tRut_keyDown(object sender, KeyEventArgs e)
         {
             Persona dato = null;
             if (e.Key == Key.Enter) {
-<<<<<<< HEAD
                 String rut = new Validaciones().validaRut(this.tRut.Text.Trim(),this.tRut);
                 dato = new Persona(rut).findByRut();
-=======
-                dato = new Persona(this.tRut.Text.Trim()).findByRut();
->>>>>>> 0ab46914256cd01fc186470fc6fd7ffc602ac0d2
                 if (dato != null)
                 {
                     this.tRut.Text = dato.rut;
                     this.tName.Text = dato.nombre;
                     birthDay(dato);
                     Horario h = new Horario();
-<<<<<<< HEAD
-
 
                     ThreadPool.QueueUserWorkItem(o =>
                     {
@@ -166,11 +158,7 @@ namespace WpfApplication1
                             {
                                 Clear();// this.lDate.Content = result;
                             }));
-                    });
-=======
-                    
->>>>>>> 0ab46914256cd01fc186470fc6fd7ffc602ac0d2
-                    
+                    });   
                 }
                 else MessageBox.Show("No estas registrado como empleado XUXETUMADRE!.");
             }
