@@ -2,6 +2,116 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Software Profesional" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Icon="/index;component/images/cosoooo.fw1.png" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" BorderBrush="#FF3EAAF5" AllowDrop="False" FontFamily="Futura LT" d:DesignHeight="768" d:DesignWidth="1024" MinWidth="800" MinHeight="640" WindowStyle="None" WindowState="Maximized">
+	<Window.Resources>
+		<Storyboard x:Key="aniLogoizquierda">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-110"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="aniLogoDerecha">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="110"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="animacionTitulo">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="label4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="gMisionAnimacion">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="gMision">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFA600AC"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFC127C7"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFA600AC"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="gInfoAnimacion">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="gInfo">
+				<EasingColorKeyFrame KeyTime="0" Value="#FFE0552A"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FFE07554"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FFE0552A"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="gRelojAnimacion">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="gReloj">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF00A400"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF42B042"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF00A400"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="gCumpleAnimacion">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="gCumple">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF623DBE"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF795AC7"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF623DBE"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="gMenuAnimacion">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="gMenu">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF307DD7"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF5D97DA"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF307DD7"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="gAccidenteAnimacion">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="gAccidente">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF265CA2"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF4978B6"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF265CA2"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="gTiempoAnimacion">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="gTiempo">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF2D8BEF"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF55A1F1"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF2D8BEF"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="grid">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF2D8BEF"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF55A1F1"/>
+				<EasingColorKeyFrame KeyTime="0:0:1" Value="#FF2D8BEF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource aniLogoizquierda}"/>
+			<BeginStoryboard Storyboard="{StaticResource aniLogoDerecha}"/>
+			<BeginStoryboard Storyboard="{StaticResource animacionTitulo}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="gMision">
+			<BeginStoryboard x:Name="gInfoAnimacion_BeginStoryboard" Storyboard="{StaticResource gMisionAnimacion}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="gInfo">
+			<BeginStoryboard x:Name="gInfoAnimacion_BeginStoryboard1" Storyboard="{StaticResource gInfoAnimacion}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="gReloj">
+			<BeginStoryboard x:Name="gRelojAnimacion_BeginStoryboard" Storyboard="{StaticResource gRelojAnimacion}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="gCumple">
+			<BeginStoryboard x:Name="gCumpleAnimacion_BeginStoryboard" Storyboard="{StaticResource gCumpleAnimacion}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="gMenu">
+			<BeginStoryboard x:Name="gMenuAnimacion_BeginStoryboard" Storyboard="{StaticResource gMenuAnimacion}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="gAccidente">
+			<BeginStoryboard x:Name="gAccidenteAnimacion_BeginStoryboard" Storyboard="{StaticResource gAccidenteAnimacion}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="gTiempo">
+			<BeginStoryboard x:Name="gTiempoAnimacion_BeginStoryboard" Storyboard="{StaticResource gTiempoAnimacion}"/>
+		</EventTrigger>
+	</Window.Triggers>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="104*"/>
@@ -20,7 +130,16 @@
             <ColumnDefinition Width="301*"/>
         </Grid.ColumnDefinitions>
         <Border BorderBrush="Silver" BorderThickness="0" Name="border2" Background="#FF33B5E6" Grid.ColumnSpan="3">
-            <Label Content="LYNX SOFT" Name="label4" FontSize="72" FontFamily="Futura LT" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Label Content="LYNX SOFT" Name="label4" FontSize="72" FontFamily="Futura LT" Foreground="White" Background="{x:Null}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" >
+            	<Label.RenderTransform>
+            		<TransformGroup>
+            			<ScaleTransform/>
+            			<SkewTransform/>
+            			<RotateTransform/>
+            			<TranslateTransform/>
+            		</TransformGroup>
+            	</Label.RenderTransform>
+            </Label>
         </Border>
         <Grid Name="gInfo" Background="#FFE0552A" Grid.Row="3" Grid.RowSpan="4" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -105,7 +224,7 @@
             </Grid.RowDefinitions>
             <Border BorderThickness="2,0" Grid.RowSpan="3" BorderBrush="#FF33B5E6"/>
             <TextBox Margin="0" Name="frase_" FontSize="18" Grid.Row="2" Text="frase" Background="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" Style="{DynamicResource textBox}" FontFamily="Futura LT Light" TextWrapping="Wrap" Padding="5" />
-            <Grid Grid.RowSpan="2" Background="#FF2D8BEF">
+            <Grid x:Name="grid" Grid.RowSpan="2" Background="#FF2D8BEF">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="27*"/>
                     <ColumnDefinition Width="90*"/>
@@ -131,8 +250,26 @@
 
             </Grid>
         </Grid>
-        <Image Name="image2" Source="images/logo_inverso_oficial.der.png" HorizontalAlignment="Left" Width="104" />
-        <Image Margin="0" Name="image3" Source="images/logo_inverso_oficial.fw.png" Grid.Column="2" HorizontalAlignment="Right" Width="104" />
+        <Image Name="image2" Source="images/logo_inverso_oficial.der.png" HorizontalAlignment="Left" Width="104" RenderTransformOrigin="0.5,0.5" >
+        	<Image.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Image.RenderTransform>
+        </Image>
+        <Image Margin="0" Name="image3" Source="images/logo_inverso_oficial.fw.png" Grid.Column="2" HorizontalAlignment="Right" Width="104" RenderTransformOrigin="0.5,0.5" >
+        	<Image.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Image.RenderTransform>
+        </Image>
         <Border BorderBrush="#FF33B5E6" BorderThickness="1" Name="border1" Grid.ColumnSpan="3" Margin="0"/>
     </Grid>
 </Window>
