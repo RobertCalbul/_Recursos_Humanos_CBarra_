@@ -156,7 +156,7 @@
 
             <TextBox Name="tName" Grid.Column="3" Margin="0,15,0,14" Grid.Row="2" TextWrapping="Wrap" Text="Jacob Henriquez" Padding="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" BorderThickness="0" Foreground="#FF757E81" FontSize="18" MaxLines="1" />
         </Grid>
-        <Grid Name="gMision" Grid.Row="1" Grid.RowSpan="3" Background="#FFA600AC">
+        <Grid Name="gMision" Grid.Row="1" Grid.RowSpan="3" Background="#FFBB07C1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="61*"/>
                 <RowDefinition Height="135*"/>
