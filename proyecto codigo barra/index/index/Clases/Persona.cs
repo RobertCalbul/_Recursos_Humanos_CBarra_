@@ -23,7 +23,27 @@ namespace WpfApplication1.Clases
             this.nombre = nombre;
             this.fecha_nac = fecha_nac;
         }
+        public int get_idPersonal()
+        {
+            try
+            {
+                con = new Clases.Conexion().getConexion();
+                con.Open();
 
+                MySqlCommand sqlCom = new MySqlCommand(string.Format("SELECT id_personal FROM personal WHERE rut = '{0}'", this.rut), con);
+                MySqlDataReader res = sqlCom.ExecuteReader();
+
+                int resultados = -1;
+
+                while (res.Read()) resultados = res.GetInt32(0);
+                con.Close();
+                return resultados;
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
         public Persona findByRut()
         {
             Persona per = null;
@@ -35,7 +55,6 @@ namespace WpfApplication1.Clases
                 MySqlDataReader res = sqlCom.ExecuteReader();
                 while (res.Read())
                 {
-                    Console.WriteLine(res.GetString(0)+" "+ res.GetString(1));
                     per = new Persona(res.GetString(0), res.GetString(1), res.GetString(2));
                 }
                 con.Close();

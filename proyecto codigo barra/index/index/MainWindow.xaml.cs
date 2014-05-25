@@ -149,7 +149,13 @@ namespace WpfApplication1
                     this.tRut.Text = dato.rut;
                     this.tName.Text = dato.nombre;
                     birthDay(dato);
-                    Horario h = new Horario();
+                    String id_personal = new Persona(this.tRut.Text).get_idPersonal().ToString();
+                    String fecha = new Validaciones().DateFormat(DateTime.Today.ToString("d"));
+                    String llegada = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) < 12 ? this.reloj_.Content.ToString() : "";
+                    String salida = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) > 12 ? this.reloj_.Content.ToString() : "";
+
+                    if (new RegistroHorario(id_personal, fecha, llegada, salida).save() > 0) MessageBox.Show("paso");
+                    else MessageBox.Show("No paso");
 
                     ThreadPool.QueueUserWorkItem(o =>
                     {

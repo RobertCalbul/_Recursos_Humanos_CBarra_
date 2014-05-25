@@ -69,9 +69,9 @@
     </Compile>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\FrasesDiarias.cs" />
-    <Compile Include="Clases\Horario.cs" />
     <Compile Include="Clases\MenuDefault.cs" />
     <Compile Include="Clases\Persona.cs" />
+    <Compile Include="Clases\RegistroHorario.cs" />
     <Compile Include="Clases\Validaciones.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
