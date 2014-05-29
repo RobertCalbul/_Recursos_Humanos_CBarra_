@@ -169,7 +169,11 @@ namespace WpfApplication1
                             }));
                     });   
                 }
+<<<<<<< HEAD
                 else MessageBox.Show("No se encuentra registrado como empleado.");
+=======
+                else MessageBox.Show("No estas registrado como empleado!");
+>>>>>>> a7d73d10507c9f7f0796f524ca2e358697ccf9ae
             }
             
         }
