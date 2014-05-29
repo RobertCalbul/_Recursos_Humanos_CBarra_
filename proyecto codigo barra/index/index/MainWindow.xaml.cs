@@ -152,8 +152,8 @@ namespace WpfApplication1
                     birthDay(dato);
                     String id_personal = new Persona(this.tRut.Text).get_idPersonal().ToString();
                     String fecha = new Validaciones().DateFormat(DateTime.Today.ToString("d"));
-                    String llegada = int.Parse(/*this.reloj_.Content.ToString().Split(':')[0]*/"13") < 12 ? this.reloj_.Content.ToString() : "";
-                    String salida = int.Parse(/*this.reloj_.Content.ToString().Split(':')[0]*/"13") > 12 ? this.reloj_.Content.ToString() : "";
+                    String llegada = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) < 12 ? this.reloj_.Content.ToString() : "";
+                    String salida = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) > 12 ? this.reloj_.Content.ToString() : "";
                     RegistroHorario horario = new RegistroHorario(id_personal, fecha, llegada, salida);
                     if (horario.save() > 0) Console.WriteLine("OKEY REGISTRO ENTRADA" + llegada+" "+ salida);
                     else { horario.update(); Console.WriteLine("OKEY REGISTRO SALIDA" + llegada + " " + salida); }
@@ -169,11 +169,7 @@ namespace WpfApplication1
                             }));
                     });   
                 }
-<<<<<<< HEAD
                 else MessageBox.Show("No se encuentra registrado como empleado.");
-=======
-                else MessageBox.Show("No estas registrado como empleado!");
->>>>>>> a7d73d10507c9f7f0796f524ca2e358697ccf9ae
             }
             
         }
