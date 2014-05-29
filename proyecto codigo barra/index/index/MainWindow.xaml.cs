@@ -166,7 +166,7 @@ namespace WpfApplication1
                             }));
                     });   
                 }
-                else MessageBox.Show("No estas registrado como empleado XUXETUMADRE!.");
+                else MessageBox.Show("No estas registrado como empleado!");
             }
             
         }
