@@ -146,27 +146,30 @@ namespace WpfApplication1
                 dato = new Persona(rut).findByRut();
                 if (dato != null)
                 {
+                    this.tRut.IsEnabled = false;
                     this.tRut.Text = dato.rut;
                     this.tName.Text = dato.nombre;
                     birthDay(dato);
                     String id_personal = new Persona(this.tRut.Text).get_idPersonal().ToString();
                     String fecha = new Validaciones().DateFormat(DateTime.Today.ToString("d"));
-                    String llegada = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) < 12 ? this.reloj_.Content.ToString() : "";
-                    String salida = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) > 12 ? this.reloj_.Content.ToString() : "";
+                    String llegada = int.Parse(/*this.reloj_.Content.ToString().Split(':')[0]*/"13") < 12 ? this.reloj_.Content.ToString() : "";
+                    String salida = int.Parse(/*this.reloj_.Content.ToString().Split(':')[0]*/"13") > 12 ? this.reloj_.Content.ToString() : "";
+                    RegistroHorario horario = new RegistroHorario(id_personal, fecha, llegada, salida);
+                    if (horario.save() > 0) Console.WriteLine("OKEY REGISTRO ENTRADA" + llegada+" "+ salida);
+                    else { horario.update(); Console.WriteLine("OKEY REGISTRO SALIDA" + llegada + " " + salida); }
 
-                    if (new RegistroHorario(id_personal, fecha, llegada, salida).save() > 0) MessageBox.Show("paso");
-                    else MessageBox.Show("No paso");
 
                     ThreadPool.QueueUserWorkItem(o =>
                     {
                         Thread.Sleep(2000);
                             Dispatcher.BeginInvoke(new Action(() =>
                             {
+                                this.tRut.IsEnabled = true;
                                 Clear();// this.lDate.Content = result;
                             }));
                     });   
                 }
-                else MessageBox.Show("No estas registrado como empleado XUXETUMADRE!.");
+                else MessageBox.Show("No se encuentra registrado como empleado.");
             }
             
         }

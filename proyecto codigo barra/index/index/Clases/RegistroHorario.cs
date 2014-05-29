@@ -55,5 +55,30 @@ namespace WpfApplication1.Clases
                 return 0;
             }
         }
+
+        public int update() {
+            try
+            {
+                con = new Conexion().getConexion();
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = con;
+                command.CommandText = "UPDATE registro_horario set hora_salida=?hora_salida ;";
+                //MySqlParameter hora_llegada = new MySqlParameter("?hora_llegada", MySqlDbType.VarChar, 45);
+                MySqlParameter hora_salida = new MySqlParameter("?hora_salida", MySqlDbType.VarChar, 45);
+
+                //hora_llegada.Value = this.hora_llegada;
+                hora_salida.Value = this.hora_salida;
+
+                //command.Parameters.Add(hora_llegada);
+                command.Parameters.Add(hora_salida);
+
+                con.Open();
+                return command.ExecuteNonQuery();
+          
+            }catch(Exception ex){
+                Console.WriteLine("ERROR RegistroHorario.update() "+ex.Message);
+                return 0;
+            }
+        }
     }
 }
