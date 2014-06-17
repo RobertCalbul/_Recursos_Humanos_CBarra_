@@ -152,11 +152,16 @@ namespace WpfApplication1
                     birthDay(dato);
                     String id_personal = new Persona(this.tRut.Text).get_idPersonal().ToString();
                     String fecha = new Validaciones().DateFormat(DateTime.Today.ToString("d"));
-                    String llegada = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) < 12 ? this.reloj_.Content.ToString() : "";
-                    String salida = int.Parse(this.reloj_.Content.ToString().Split(':')[0]) > 12 ? this.reloj_.Content.ToString() : "";
+                    String llegada = /*int.Parse(*/this.reloj_.Content.ToString()/*) < 12 ? this.reloj_.Content.ToString() : ""*/;
+                    String salida = "0";// int.Parse(this.reloj_.Content.ToString().Split(':')[0]) > 12 ? this.reloj_.Content.ToString() : "";
+                    
                     RegistroHorario horario = new RegistroHorario(id_personal, fecha, llegada, salida);
-                    if (horario.save() > 0) Console.WriteLine("OKEY REGISTRO ENTRADA" + llegada+" "+ salida);
-                    else { horario.update(); Console.WriteLine("OKEY REGISTRO SALIDA" + llegada + " " + salida); }
+                    if (horario.save() > 0) MessageBox.Show("OKEY REGISTRO ENTRADA" + llegada+" "+ salida);
+                    else {
+                        salida = this.reloj_.Content.ToString();
+                        RegistroHorario h2 = new RegistroHorario(id_personal,fecha,llegada,salida);
+                        h2.update(); MessageBox.Show("OKEY REGISTRO SALIDA" + llegada + " " + salida); 
+                    }
 
 
                     ThreadPool.QueueUserWorkItem(o =>

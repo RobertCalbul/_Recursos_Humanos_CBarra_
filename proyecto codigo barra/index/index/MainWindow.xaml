@@ -154,7 +154,7 @@
 
             <TextBox Name="tRut" Grid.Column="3" Margin="0,10,0,15" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Padding="10" BorderThickness="0" Foreground="#FF757E81" FontSize="18" Grid.Row="1" KeyDown="tRut_keyDown" MaxLines="1" />
 
-            <TextBox Name="tName" Grid.Column="3" Margin="0,15,0,14" Grid.Row="2" TextWrapping="Wrap" Text="Jacob Henriquez" Padding="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" BorderThickness="0" Foreground="#FF757E81" FontSize="18" MaxLines="1" />
+            <TextBox Name="tName" Grid.Column="3" Margin="0,15,0,14" Grid.Row="2" TextWrapping="Wrap" Text="" Padding="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" BorderThickness="0" Foreground="#FF757E81" FontSize="18" MaxLines="1" />
         </Grid>
         <Grid Name="gMision" Grid.Row="1" Grid.RowSpan="3" Background="#FFBB07C1">
             <Grid.RowDefinitions>
@@ -167,7 +167,7 @@
         </Grid>
         <Grid Name="gReloj" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Background="#FF00A400">
             <Border BorderBrush="#FF33B5E6" BorderThickness="2" Name="border4" Margin="0" />
-            <Label Content="18:45:00" Name="reloj_" Margin="0" Padding="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontWeight="Bold" FontStretch="Expanded" FontSize="72" Background="{x:Null}" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated" UseLayoutRounding="True" />
+            <Label Content="18:45:00" Name="reloj_" Margin="0" Padding="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontWeight="Bold" FontStretch="Expanded" FontSize="72" Background="{x:Null}" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated" UseLayoutRounding="True" FontFamily="Futura LT Light" />
         </Grid>
         <Grid Margin="0" Name="gCumple" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" Background="#FF623DBE">
             <Grid.RowDefinitions>
