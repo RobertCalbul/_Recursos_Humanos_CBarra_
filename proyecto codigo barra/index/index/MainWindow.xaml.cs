@@ -156,11 +156,11 @@ namespace WpfApplication1
                     String salida = "0";// int.Parse(this.reloj_.Content.ToString().Split(':')[0]) > 12 ? this.reloj_.Content.ToString() : "";
                     
                     RegistroHorario horario = new RegistroHorario(id_personal, fecha, llegada, salida);
-                    if (horario.save() > 0) MessageBox.Show("OKEY REGISTRO ENTRADA" + llegada+" "+ salida);
+                    if (horario.save() > 0) Console.WriteLine("OKEY REGISTRO ENTRADA" + llegada+" "+ salida);
                     else {
                         salida = this.reloj_.Content.ToString();
                         RegistroHorario h2 = new RegistroHorario(id_personal,fecha,llegada,salida);
-                        h2.update(); MessageBox.Show("OKEY REGISTRO SALIDA" + llegada + " " + salida); 
+                        h2.update(); Console.WriteLine("OKEY REGISTRO SALIDA" + llegada + " " + salida); 
                     }
 
 
